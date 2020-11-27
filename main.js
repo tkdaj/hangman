@@ -166,7 +166,7 @@ const drawAllBlanksAndLetters = (characters) => {
     nextSpaceIndex = nextSpaceIndex ? nextSpaceIndex : characters.length - 1;
     if (
       charObj.char === " " &&
-      (nextSpaceIndex - j) * (letterWidth + letterGap) + currentX > 1200
+      (nextSpaceIndex - j) * (letterWidth + letterGap) + currentX > canvas.width
     ) {
       currentX = 500;
       currentY += 50;
@@ -203,7 +203,7 @@ const drawAllBlanksAndLetters = (characters) => {
 };
 
 const draw = () => {
-  ctx.clearRect(0, 0, 1200, 600);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   solution =
     solution ||
     form.puzzleSolution.value
